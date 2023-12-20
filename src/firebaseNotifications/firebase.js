@@ -4,14 +4,15 @@
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
 
-var firebaseConfig = {
-  apiKey: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_API_KEY`,
-  authDomain: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_AUTH_DOMAIN`,
-  projectId: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_PROJECT_ID`,
-  storageBucket: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_STORAGE_BUCKET`,
-  messagingSenderId: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_SENDER_ID`,
-  appId: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_APP_ID`,
-  measurementId: `REPLACE_WITH_YOUR_FIREBASE_MESSAGING_MEASUREMENT_ID`,
+const firebaseConfig = {
+  apiKey: "AIzaSyC6BA9m_bpPTMyRC26cCh6HKa5lsEXuprA",
+  authDomain: "stg-gain.firebaseapp.com",
+  databaseURL: "https://stg-gain-default-rtdb.firebaseio.com",
+  projectId: "stg-gain",
+  storageBucket: "stg-gain.appspot.com",
+  messagingSenderId: "276756743439",
+  appId: "1:276756743439:web:b465a981e77c091abcea7a",
+  measurementId: "G-DPN453J8EE",
 };
 
 initializeApp(firebaseConfig);
@@ -19,7 +20,7 @@ initializeApp(firebaseConfig);
 const messaging = getMessaging();
 
 export const requestForToken = () => {
-  return getToken(messaging, { vapidKey: `REPLACE_WITH_YOUR_VAPID_KEY` })
+  return getToken(messaging, { vapidKey: `BJAejdqlx_rPm2Tj6P4KZxyqujGVCIWH6LVzJQpC6OkiaL4fXVHC_9-abNfA848SF-lr12lf45xQKZ6Nw-k2OFk` })
     .then((currentToken) => {
       if (currentToken) {
         console.log('current token for client: ', currentToken);
